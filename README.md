@@ -1,8 +1,3 @@
-Here's a **professional, full-length, copy-paste-ready `README.md`** file for your [Monday Coffee Expansion SQL Project](https://github.com/mangal-singh001/Monday-Coffee-Expansion-SQL-Project-), built using your exact project files and content:
-
----
-
-```markdown
 # ☕ Monday Coffee Expansion SQL Project
 
 **Objective:**  
@@ -141,8 +136,4 @@ Primary–Foreign Key relationships based on city and product/customer mappings.
 
 ```
 
----
 
-✅ Let me know if you'd like this saved and uploaded as a `.md` file or want a version tailored for your **LinkedIn “Projects” section** too!
-```
-  

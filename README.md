@@ -1,5 +1,9 @@
 # ☕ Monday Coffee Expansion SQL Project
 
+
+
+(1.png)
+
 **Objective:**  
 To help the fictional coffee company **Monday Coffee** identify the best cities in India to open new branches by analyzing sales performance, population demographics, and city-level affordability using SQL.
 
@@ -56,20 +60,43 @@ Monday Coffee has been selling products online since January 2023. The company n
 
 ## 📊 Key Business Questions Answered
 
-1. ☕ **How many people in each city are likely to consume coffee?**  
-   (25% of population assumed to be coffee drinkers)
 
-2. 💰 **What’s the total revenue and average revenue per customer by city?**
+---
 
-3. 📦 **What are the top-selling products by city?**
 
-4. 🏙️ **What’s the customer base in each city?**
+1. ☕ **Coffee Consumers Count**
+   *How many people in each city are estimated to consume coffee, given that 25% of the population does?*
 
-5. 🏠 **What’s the average rent per customer in each city?**
+2. 💰 **Total Revenue from Coffee Sales**
+   *What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?*
 
-6. 📈 **How is monthly sales growth trending across cities?**
+3. 📦 **Sales Count for Each Product**
+   *How many units of each coffee product have been sold?*
 
-7. 🔍 **Which 3 cities should Monday Coffee expand to?**
+4. 🧾 **Average Sales Amount per City**
+   *What is the average sales amount per customer in each city?*
+
+5. 🏙️ **City Population and Coffee Consumers**
+   *Provide a list of cities along with their populations and estimated coffee consumers.*
+
+6. 🥇 **Top Selling Products by City**
+   *What are the top 3 selling products in each city based on sales volume?*
+
+7. 👥 **Customer Segmentation by City**
+   *How many unique customers are there in each city who have purchased coffee products?*
+
+8. 💸 **Average Sale vs Rent**
+   *Find each city and their average sale per customer and average rent per customer.*
+
+9. 📈 **Monthly Sales Growth**
+   *Calculate the percentage growth (or decline) in sales over different months.*
+
+10. 📊 **Market Potential Analysis**
+    *Identify the top 3 cities based on highest sales. Return city name, total sale, total rent, total customers, and estimated coffee consumers.*
+
+---
+
+
 
 ---
 
@@ -132,8 +159,5 @@ Primary–Foreign Key relationships based on city and product/customer mappings.
 
 ---
 
-> “Turning coffee and queries into smart expansion strategies.”
-
-```
 
 

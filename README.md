@@ -1,106 +1,148 @@
-☕ Monday Coffee Expansion SQL Project
-Objective:
-The goal of this project is to analyze customer and sales data using SQL to help the hypothetical coffee chain "Monday Coffee" identify the most suitable cities for business expansion in India. By leveraging MySQL and business intelligence techniques, we aim to recommend cities based on revenue, affordability, population, and other performance indicators.
+Here's a **professional, full-length, copy-paste-ready `README.md`** file for your [Monday Coffee Expansion SQL Project](https://github.com/mangal-singh001/Monday-Coffee-Expansion-SQL-Project-), built using your exact project files and content:
 
-📁 Project Structure
-bash
-Copy
-Edit
-📂 Monday-Coffee-Expansion-SQL-Project
+---
+
+```markdown
+# ☕ Monday Coffee Expansion SQL Project
+
+**Objective:**  
+To help the fictional coffee company **Monday Coffee** identify the best cities in India to open new branches by analyzing sales performance, population demographics, and city-level affordability using SQL.
+
+---
+
+## 🧠 Business Problem
+
+Monday Coffee has been selling products online since January 2023. The company now aims to expand its offline presence by opening physical coffee shops. Using sales data, customer records, city demographics, and rental estimates, we answer:
+
+> 🟤 “Which 3 cities offer the highest business potential for expansion based on performance, customer base, and cost-efficiency?”
+
+---
+
+## 📁 Project Structure
+
+```
+
+📂 Monday-Coffee-Expansion-SQL-Project-
 │
-├── 📄 Coffee_Sales_Analysis.ipynb      # SQL queries run in Jupyter Notebook
-├── 📄 sales.csv                         # Coffee shop sales data
-├── 📄 city_info.csv                     # City-level demographic and rent data
-└── 📄 README.md                         # Project documentation
-📊 Dataset Overview
-The project uses two primary datasets:
+├── 📄 city.csv               → City population, rent & rank
+├── 📄 customers.csv          → Customer details (with city ID)
+├── 📄 products.csv           → Product name and price
+├── 📄 sales.csv              → Sales records (2023)
+├── 📄 Schemas.sql            → Table creation scripts
+├── 📄 Questions.sql          → All business questions
+├── 📄 Solutions.sql          → SQL solutions for analysis
+├── 📄 Recommendations.sql    → Final expansion suggestions
+├── 📄 ERD Diagram.pgerd      → Entity Relationship Diagram
+└── 📄 README.md              → Project documentation (this file)
 
-Sales Dataset (50,000+ records)
+````
 
-Fields: Order ID, Date, Product, Category, Revenue, Customer ID, City
+---
 
-Purpose: To analyze total revenue, popular products, city-wise performance
+## 🛠️ Tools & Technologies
 
-City Information Dataset
+- **SQL** (PostgreSQL/MySQL)
+- **Jupyter Notebook** (via Python's SQL extensions, optional)
+- **Spreadsheet Tools** (CSV handling)
+- **ERD Design** (Schema planning)
 
-Fields: City Name, Population, Average Rent, State
+---
 
-Purpose: To evaluate affordability and customer density for expansion
+## 🧮 Database Schema
 
-🛠 Tools & Technologies Used
-SQL (MySQL) – Core querying and analysis
+- `city` – population, rent estimate, city rank  
+- `customers` – customer ID, name, city ID  
+- `products` – product ID, name, price  
+- `sales` – transaction info (product, customer, total, rating, date)  
 
-Python (pymysql, pandas) – To connect MySQL with Jupyter and run queries
+🧾 [See Full Schema in `Schemas.sql`](./Schemas.sql.sql)
 
-Jupyter Notebook – For executing SQL + visualizing output
+---
 
-Matplotlib / Seaborn – For visual insights and comparisons
+## 📊 Key Business Questions Answered
 
-🔍 Key Business Questions
-Which cities are generating the highest revenue?
+1. ☕ **How many people in each city are likely to consume coffee?**  
+   (25% of population assumed to be coffee drinkers)
 
-What is the average revenue per customer per city?
+2. 💰 **What’s the total revenue and average revenue per customer by city?**
 
-How does each city compare in terms of rent, population, and revenue?
+3. 📦 **What are the top-selling products by city?**
 
-Which cities offer high business potential and low rental costs?
+4. 🏙️ **What’s the customer base in each city?**
 
-📈 Analysis Highlights
-✅ Data Loading & Setup
+5. 🏠 **What’s the average rent per customer in each city?**
 
-Loaded sales.csv and city_info.csv into MySQL using Python scripts
+6. 📈 **How is monthly sales growth trending across cities?**
 
-Created relational tables and indexes for fast querying
+7. 🔍 **Which 3 cities should Monday Coffee expand to?**
 
-✅ Revenue & City Insights
+---
 
-Identified top-performing cities like Mumbai, Delhi, and Bangalore in terms of total revenue
+## 📌 Summary of Findings
 
-Calculated revenue per customer and compared it across all cities
+### 🔝 Top Recommended Cities
 
-✅ Affordability Analysis
+| City     | Why Recommended |
+|----------|------------------|
+| **Pune**   | Highest total revenue, low rent per customer |
+| **Delhi**  | Largest potential customer base (7.7M), high total customers |
+| **Jaipur** | Most customers (69), lowest average rent per customer |
 
-Merged rent data and computed revenue-to-rent ratios
+📝 Source: [`Recommendations.sql`](./Recommendations.sql)
 
-Cities like Pune, Jaipur, and Chandigarh emerged as cost-effective options
+---
 
-✅ Expansion Recommendation
+## 🧠 Sample SQL Query
 
-Final recommendations were made based on:
+```sql
+-- Total Revenue by City in Q4 2023
+SELECT 
+  c1.city_name,
+  SUM(total) AS total_revenue
+FROM sales s
+JOIN customers c ON s.customer_id = c.customer_id
+JOIN city c1 ON c.city_id = c1.city_id
+WHERE EXTRACT(YEAR FROM sale_date) = 2023
+  AND EXTRACT(QUARTER FROM sale_date) = 4
+GROUP BY c1.city_name
+ORDER BY total_revenue DESC;
+````
 
-High revenue per customer
+🧾 See full analysis in [`Solutions.sql`](./Solutions.sql)
 
-Lower average rent
+---
 
-Dense population
+## 🔍 Entity Relationship Diagram (ERD)
 
-Recommended Cities:
+📌 4 Tables: `city`, `customers`, `products`, `sales`
+Primary–Foreign Key relationships based on city and product/customer mappings.
 
-🏙️ Pune
+📎 [View Diagram](./ERD%20Diagram.pgerd)
 
-🏙️ Jaipur
+---
 
-🏙️ Delhi
+## 🧠 Key Learnings
 
+* Writing optimized joins and aggregations
+* Using **CTEs**, **Window Functions**, and **Subqueries**
+* Combining business logic with SQL metrics
+* Simulating real-world expansion analysis
 
-📌 Key Learnings
-Writing optimized SQL queries for large datasets
+---
 
-Using joins, aggregations, and subqueries effectively
+## 📬 Connect with Me
 
-Data storytelling through SQL + Python
+* 💼 [LinkedIn](https://www.linkedin.com/in/mangal-singh123/)
+* 💻 [GitHub](https://github.com/mangal-singh001)
 
-Decision-making using real-world business metrics
+---
 
-🔗 GitHub Repository
-👉 View the full project on GitHub
+> “Turning coffee and queries into smart expansion strategies.”
 
-📬 Connect With Me
-LinkedIn: Mangal Singh
+```
 
-GitHub: mangal-singh001
+---
 
-“Transforming raw data into smart business decisions — one query at a time.”
-
-
-
+✅ Let me know if you'd like this saved and uploaded as a `.md` file or want a version tailored for your **LinkedIn “Projects” section** too!
+```
+  

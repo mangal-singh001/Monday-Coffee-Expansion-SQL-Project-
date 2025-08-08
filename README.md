@@ -1,7 +1,6 @@
 # ☕ Monday Coffee Expansion SQL Project
 
 
-<h1>☕ Monday Coffee Expansion SQL Project</h1>
 
 <p align="center">
   <img src="1.png" alt="Monday Coffee Dashboard" width="700">

@@ -8,6 +8,7 @@
 
 
 **Objective:**  
+
 To help the fictional coffee company **Monday Coffee** identify the best cities in India to open new branches by analyzing sales performance, population demographics, and city-level affordability using SQL.
 
 ---

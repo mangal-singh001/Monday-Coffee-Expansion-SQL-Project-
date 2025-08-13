@@ -13,6 +13,7 @@ To help the fictional coffee company **Monday Coffee** identify the best cities 
 
 ---
 
+
 ## 🧠 Business Problem
 
 Monday Coffee has been selling products online since January 2023. The company now aims to expand its offline presence by opening physical coffee shops. Using sales data, customer records, city demographics, and rental estimates, we answer:
